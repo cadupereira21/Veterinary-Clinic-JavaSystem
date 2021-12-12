@@ -30,11 +30,10 @@ public class VeterinarioDAO extends DAO {
     public Veterinario create(String nome, String email, String telefone) {
         try {
             PreparedStatement stmt;
-            stmt = DAO.getConnection().prepareStatement("INSERT INTO vet (id, nome, email, telefone) VALUES (?, ?,?,?)");
-            stmt.setInt(1, IdManager.getIdVeterinario());
-            stmt.setString(2, nome);
-            stmt.setString(3, email);
-            stmt.setString(4, telefone);
+            stmt = DAO.getConnection().prepareStatement("INSERT INTO vet (nome, email, telefone) VALUES (?,?,?)");
+            stmt.setString(1, nome);
+            stmt.setString(2, email);
+            stmt.setString(3, telefone);
             executeUpdate(stmt);
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);

@@ -32,13 +32,12 @@ public class TratamentoDAO extends DAO {
     public Tratamento create(String nome, Calendar dataIni, Calendar dataFim, int id_animal, int terminado) {
         try {
             PreparedStatement stmt;
-            stmt = DAO.getConnection().prepareStatement("INSERT INTO tratamento (id, id_animal, nome, dataIni, dataFim, terminado) VALUES (?,?,?,?,?,?)");
-            stmt.setInt(1, IdManager.getIdTratamento());
-            stmt.setInt(2, id_animal);
-            stmt.setString(3, nome);
-            stmt.setString(4, Parser.DataToString(dataIni));
-            stmt.setString(5, Parser.DataToString(dataFim));
-            stmt.setInt(6, terminado);
+            stmt = DAO.getConnection().prepareStatement("INSERT INTO tratamento (id_animal, nome, dataIni, dataFim, terminado) VALUES (?,?,?,?,?)");
+            stmt.setInt(1, id_animal);
+            stmt.setString(2, nome);
+            stmt.setString(3, Parser.DataToString(dataIni));
+            stmt.setString(4, Parser.DataToString(dataFim));
+            stmt.setInt(5, terminado);
             executeUpdate(stmt);
         } catch (SQLException ex) {
             Logger.getLogger(TratamentoDAO.class.getName()).log(Level.SEVERE, null, ex);

@@ -10,11 +10,11 @@ import java.util.Calendar;
 public class Main {
     public static void main(String[] args) {
 
-        //ClienteDAO.getInstance().create("Carlos", "Rua dos pássaros, 234, Piracicaba-SP", "13425620", "carloseduardo2101@gmail.com", "19996060222");
-        //ClienteDAO.getInstance().create("Luiz", "Rua dos bobos, 324, Campinas-SP", "13245678", "luiz@gmail.com", "19996660504");
+//       ClienteDAO.getInstance().create("Carlos", "Rua dos pássaros, 234, Piracicaba-SP", "13425620", "carloseduardo2101@gmail.com", "19996060222");
+//        ClienteDAO.getInstance().create("Luiz", "Rua dos bobos, 324, Campinas-SP", "13245678", "luiz@gmail.com", "19996660504");
 //        ClienteDAO.getInstance().create("Pedro", "Rua dos pedros, 100, Piracicaba-SP", "13234234", "pedro@gmail.com", "19993008989");
 //        ClienteDAO.getInstance().create("Vitor", "Rua das cachoeiras, 124, Limeira-SP", "13566545", "vitor@gmail.com", "19984752222");
-
+//
 //        AnimalDAO.getInstance().create(1, "Shine", 2009, "Masculino", 1);
 //        AnimalDAO.getInstance().create(2, "Totó", 2006, "Masculino", 1);
 //        AnimalDAO.getInstance().create(2, "Thor", 2019, "Masculino", 1);
@@ -22,7 +22,7 @@ public class Main {
 //        AnimalDAO.getInstance().create(3, "Lila", 2012, "Feminino", 1);
 //        AnimalDAO.getInstance().create(4, "Pipoca", 2012, "Masculino", 1);
 //        AnimalDAO.getInstance().create(4, "Relâmpago", 2015, "Masculino", 2);
-//
+
 //        Calendar ini = Calendar.getInstance();
 //        Calendar fim = Calendar.getInstance();
 //
@@ -60,6 +60,6 @@ public class Main {
 //        ConsultaDAO.getInstance().create("15/12/2021", "10", "Não trazer animal selado", 7, 1, 4, 0);
 //        ConsultaDAO.getInstance().create("10/12/2021", "15", "", 4, 1, 5, 0);
 
-        System.out.println(ClienteDAO.getInstance().retrieveAll());
+        System.out.println(ConsultaDAO.getInstance().retrieveById(1).getData().get(Calendar.HOUR_OF_DAY));
     }
 }

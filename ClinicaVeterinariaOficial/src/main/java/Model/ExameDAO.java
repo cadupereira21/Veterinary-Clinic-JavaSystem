@@ -30,10 +30,9 @@ public class ExameDAO extends DAO {
     public Exame create(String nome, int id_consulta) {
         try {
             PreparedStatement stmt;
-            stmt = DAO.getConnection().prepareStatement("INSERT INTO exame (id, nome, id_consulta) VALUES (?,?,?)");
-            stmt.setInt(1, IdManager.getIdExame());
-            stmt.setString(2, nome);
-            stmt.setInt(3, id_consulta);
+            stmt = DAO.getConnection().prepareStatement("INSERT INTO exame (nome, id_consulta) VALUES (?,?)");
+            stmt.setString(1, nome);
+            stmt.setInt(2, id_consulta);
 
             executeUpdate(stmt);
         } catch (SQLException ex) {

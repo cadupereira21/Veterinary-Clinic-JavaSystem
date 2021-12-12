@@ -2,34 +2,30 @@ package Model;
 
 import java.time.LocalTime;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Parser {
+
+    public static Map<String, Integer> ToHour(String hour){
+        Map<String, Integer> aux = new HashMap<String, Integer>(2);
+        String[] input = hour.split("\\:");
+
+        aux.put("Hour", Integer.parseInt(input[0]));
+        aux.put("Minute", Integer.parseInt(input[1]));
+
+        return aux;
+    }
 
     public static Calendar ToCalendar(String data) {
 
         int dia, mes, ano;
 
-        String aux = "";
+        String[] aux = data.split("\\-");
 
-        for (int i = 0; i<4; i++){
-            aux += data.charAt(i);
-        }
-
-        ano = Integer.parseInt(aux);
-
-        aux = "";
-        for(int i = 5; i < 7; i++){
-            aux += data.charAt(i);
-        }
-
-        mes = Integer.parseInt(aux);
-
-        aux = "";
-        for(int i = 8; i < 10; i++){
-            aux += data.charAt(i);
-        }
-
-        dia = Integer.parseInt(aux);
+        ano = Integer.parseInt(aux[0]);
+        mes = Integer.parseInt(aux[1]);
+        dia = Integer.parseInt(aux[2]);
 
         Calendar auxiliar = Calendar.getInstance();
         auxiliar.set(ano, mes, dia);

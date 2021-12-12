@@ -30,8 +30,7 @@ public class ClienteDAO extends DAO {
     public Cliente create(String nome, String end, String cep, String email, String telefone) {
         try {
             PreparedStatement stmt;
-
-            stmt = DAO.getConnection().prepareStatement("INSERT INTO cliente (nome, endereco, cep, email, telefone) VALUES (?,?,?,?,?)");
+            stmt = DAO.getConnection().prepareStatement("INSERT INTO cliente (nome, end, cep, email, telefone) VALUES (?,?,?,?,?)");
             stmt.setString(1, nome);
             stmt.setString(2, end);
             stmt.setString(3, cep);
@@ -57,7 +56,7 @@ public class ClienteDAO extends DAO {
     private Cliente buildObject(ResultSet rs) {
         Cliente cliente = null;
         try {
-            cliente = new Cliente(rs.getInt("id"), rs.getString("nome"), rs.getString("endereco"), rs.getString("telefone"), rs.getString("cep"), rs.getString("email"));
+            cliente = new Cliente(rs.getInt("id"), rs.getString("nome"), rs.getString("end"), rs.getString("telefone"), rs.getString("cep"), rs.getString("email"));
         } catch (SQLException e) {
             System.err.println("Exception: " + e.getMessage());
         }
@@ -65,7 +64,7 @@ public class ClienteDAO extends DAO {
     }
 
     // Generic Retriever
-    public List<Cliente> retrieve(String query) {
+    public List retrieve(String query) {
         List<Cliente> clientes = new ArrayList();
         ResultSet rs = getResultSet(query);
         try {
@@ -79,12 +78,12 @@ public class ClienteDAO extends DAO {
     }
 
     // RetrieveAll
-    public List<Cliente> retrieveAll() {
+    public List retrieveAll() {
         return this.retrieve("SELECT * FROM cliente");
     }
 
     // RetrieveLast
-    public List<Cliente> retrieveLast(){
+    public List retrieveLast(){
         return this.retrieve("SELECT * FROM cliente WHERE id = " + lastId("cliente","id"));
     }
 
@@ -95,15 +94,15 @@ public class ClienteDAO extends DAO {
     }
 
     // RetrieveBySimilarName
-    public List<Cliente> retrieveBySimilarName(String nome) {
+    public List retrieveBySimilarName(String nome) {
         return this.retrieve("SELECT * FROM cliente WHERE nome LIKE '%" + nome + "%'");
     }
 
-    public List<Cliente> retrieveByEmail(String email) {
+    public List retrieveByEmail(String email) {
         return this.retrieve("SELECT * FROM cliente WHERE email LIKE '%" + email + "%'");
     }
 
-    public List<Cliente> retrieveByPhone(String phone) {
+    public List retrieveByPhone(String phone) {
         return this.retrieve("SELECT * FROM cliente WHERE telefone LIKE '%" + phone + "%'");
     }
 
@@ -111,7 +110,7 @@ public class ClienteDAO extends DAO {
     public void update(Cliente cliente) {
         try {
             PreparedStatement stmt;
-            stmt = DAO.getConnection().prepareStatement("UPDATE cliente SET nome=?, endereco=?, cep=?, email=?, telefone=? WHERE id=?");
+            stmt = DAO.getConnection().prepareStatement("UPDATE cliente SET nome=?, end=?, cep=?, email=?, telefone=? WHERE id=?");
             stmt.setString(1, cliente.getNome());
             stmt.setString(2, cliente.getEndereco());
             stmt.setString(3, cliente.getCep());

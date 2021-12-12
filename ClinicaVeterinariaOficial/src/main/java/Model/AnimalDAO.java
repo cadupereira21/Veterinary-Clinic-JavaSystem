@@ -30,13 +30,12 @@ public class AnimalDAO extends DAO {
     public Animal create(int idDono, String nome, int anoNasc, String sexo, int idEspecie) {
         try {
             PreparedStatement stmt;
-            stmt = DAO.getConnection().prepareStatement("INSERT INTO animal (id, nome, anoNasc, sexo, id_especie, id_cliente) VALUES (?,?,?,?,?,?)");
-            stmt.setInt(1, IdManager.getIdAnimal());
-            stmt.setString(2, nome);
-            stmt.setInt(3, anoNasc);
-            stmt.setString(4, sexo);
-            stmt.setInt(5, idEspecie);
-            stmt.setInt(6, idDono);
+            stmt = DAO.getConnection().prepareStatement("INSERT INTO animal (nome, anoNasc, sexo, id_especie, id_cliente) VALUES (?,?,?,?,?)");
+            stmt.setString(1, nome);
+            stmt.setInt(2, anoNasc);
+            stmt.setString(3, sexo);
+            stmt.setInt(4, idEspecie);
+            stmt.setInt(5, idDono);
             executeUpdate(stmt);
         } catch (SQLException ex) {
             Logger.getLogger(AnimalDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -65,7 +64,7 @@ public class AnimalDAO extends DAO {
     }
 
     // Generic Retriever
-    public List<Animal> retrieve(String query) {
+    public List retrieve(String query) {
         List<Animal> animais = new ArrayList();
         ResultSet rs = getResultSet(query);
         try {
@@ -79,12 +78,12 @@ public class AnimalDAO extends DAO {
     }
 
     // RetrieveAll
-    public List<Animal> retrieveAll() {
+    public List retrieveAll() {
         return this.retrieve("SELECT * FROM animal");
     }
 
     // RetrieveLast
-    public List<Animal> retrieveLast(){
+    public List retrieveLast(){
         return this.retrieve("SELECT * FROM animal WHERE id = " + lastId("animal","id"));
     }
 
@@ -100,7 +99,7 @@ public class AnimalDAO extends DAO {
     }
 
     // RetrieveBySimilarName
-    public List<Animal> retrieveBySimilarName(String nome) {
+    public List retrieveBySimilarName(String nome) {
         return this.retrieve("SELECT * FROM animal WHERE nome LIKE '%" + nome + "%'");
     }
 

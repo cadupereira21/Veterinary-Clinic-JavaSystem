@@ -31,15 +31,14 @@ public class ConsultaDAO extends DAO {
     public Consulta create(Calendar data, String comentario, int id_animal, int id_vet, int id_tratamento, int terminado) {
         try {
             PreparedStatement stmt;
-            stmt = DAO.getConnection().prepareStatement("INSERT INTO consulta (id, dataConsulta, horario, comentario, id_animal, id_vet, id_tratamento, terminado) VALUES (?,?,?,?,?,?,?,?)");
-            stmt.setInt(1, IdManager.getIdConsulta());
-            stmt.setString(2, Parser.DataToString(data));
-            stmt.setString(3, Parser.HorarioToString(data));
-            stmt.setString(4, comentario);
-            stmt.setInt(5, id_animal);
-            stmt.setInt(6, id_vet);
-            stmt.setInt(7, id_tratamento);
-            stmt.setInt(8, terminado);
+            stmt = DAO.getConnection().prepareStatement("INSERT INTO consulta (data, horario, comentario, id_animal, id_vet, id_tratamento, terminado) VALUES (?,?,?,?,?,?,?)");
+            stmt.setString(1, Parser.DataToString(data));
+            stmt.setString(2, Parser.HorarioToString(data));
+            stmt.setString(3, comentario);
+            stmt.setInt(4, id_animal);
+            stmt.setInt(5, id_vet);
+            stmt.setInt(6, id_tratamento);
+            stmt.setInt(7, terminado);
             executeUpdate(stmt);
         } catch (SQLException ex) {
             Logger.getLogger(ConsultaDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -51,7 +50,7 @@ public class ConsultaDAO extends DAO {
     public boolean isLastEmpty(){
         Consulta lastConsulta = this.retrieveById(lastId("consulta","id"));
         if (lastConsulta != null) {
-            return lastConsulta.getData() != null;
+            return lastConsulta.getData() == null;
         }
         return false;
     }
@@ -60,7 +59,7 @@ public class ConsultaDAO extends DAO {
     private Consulta buildObject(ResultSet rs) {
         Consulta consulta = null;
         try {
-            consulta = new Consulta(rs.getInt("id"), rs.getString("dataConsulta"), rs.getString("horario"), rs.getString("comentario"), rs.getInt("id_animal"), rs.getInt("id_vet"), rs.getInt("id_tratamento"), rs.getInt("terminado"));
+            consulta = new Consulta(rs.getInt("id"), rs.getString("data"), rs.getString("horario"), rs.getString("comentario"), rs.getInt("id_animal"), rs.getInt("id_vet"), rs.getInt("id_tratamento"), rs.getInt("terminado"));
         } catch (SQLException e) {
             System.err.println("Exception: " + e.getMessage());
         }
@@ -99,34 +98,30 @@ public class ConsultaDAO extends DAO {
 
     // RetrieveByIdAnimal
     public List<Consulta> retrieveByIdAnimal(int id) {
-        List<Consulta> consultas = this.retrieve("SELECT * FROM consulta WHERE id_animal = " + id);
-        return consultas;
+        return this.retrieve("SELECT * FROM consulta WHERE id_animal = " + id);
     }
 
     // RetrieveByIdVet
     public List<Consulta> retrieveByIdVet(int id) {
-        List<Consulta> consultas = this.retrieve("SELECT * FROM consulta WHERE id_vet = " + id);
-        return consultas;
+        return this.retrieve("SELECT * FROM consulta WHERE id_vet = " + id);
     }
 
     // RetrieveByIdTratamento
     public List<Consulta> retrieveByIdTratamento(int id) {
-        List<Consulta> consultas = this.retrieve("SELECT * FROM consulta WHERE id_tratamento = " + id);
-        return consultas;
+        return this.retrieve("SELECT * FROM consulta WHERE id_tratamento = " + id);
     }
 
     public List<Consulta> retrieveByDia(String dia) {
-        List<Consulta> consultas = this.retrieve("SELECT * FROM consulta WHERE dataConsulta = " + dia);
-        return consultas;
+        return this.retrieve("SELECT * FROM consulta WHERE data = " + dia);
     }
 
     // Update
     public void update(Consulta consulta) {
         try {
             PreparedStatement stmt;
-            stmt = DAO.getConnection().prepareStatement("UPDATE cliente SET dataConsulta=?, horario=?, comentario=?, id_animal=?, id_vet=?, id_tratamento=?, terminado=? WHERE id=?");
-            stmt.setString(1, Parser.DataToString(consulta.getData()));
-            stmt.setString(2, Parser.HorarioToString(consulta.getData()));
+            stmt = DAO.getConnection().prepareStatement("UPDATE cliente SET data=?, horario=?, comentario=?, id_animal=?, id_vet=?, id_tratamento=?, terminado=? WHERE id=?");
+            stmt.setString(1,  Parser.DataToString(consulta.getData()));
+            stmt.setString(2, Parser.DataToString(consulta.getData()));
             stmt.setString(3, consulta.getComentarios());
             stmt.setInt(4, consulta.getIdAnimal());
             stmt.setInt(5, consulta.getIdVeterinario());

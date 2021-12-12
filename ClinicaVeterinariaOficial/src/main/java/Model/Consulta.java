@@ -14,7 +14,9 @@ public class Consulta {
 
     public Consulta(int id, String data, String horario, String comentarios, int idAnimal, int idVeterinario, int idTratamento, int terminou) {
         this.id = id;
-        this.data = Parser.ToCalendar(data);
+
+        var h = Parser.ToHour(horario);
+        this.data = Parser.ToCalendar(data, h.get("Hour"), h.get("Minute"));
         this.comentarios = comentarios;
         this.idAnimal = idAnimal;
         this.idVeterinario = idVeterinario;

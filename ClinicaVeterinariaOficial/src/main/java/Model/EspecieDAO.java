@@ -30,9 +30,8 @@ public class EspecieDAO extends DAO {
     public Especie create(String nome) {
         try {
             PreparedStatement stmt;
-            stmt = DAO.getConnection().prepareStatement("INSERT INTO especie (id, nome) VALUES (?,?)");
-            stmt.setInt(1, IdManager.getIdEspecie());
-            stmt.setString(2, nome);
+            stmt = DAO.getConnection().prepareStatement("INSERT INTO especie (nome) VALUES (?)");
+            stmt.setString(1, nome);
             executeUpdate(stmt);
         } catch (SQLException ex) {
             Logger.getLogger(EspecieDAO.class.getName()).log(Level.SEVERE, null, ex);
