@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.Calendar;
+
 public class Exame {
 
     private final int id;
