@@ -8,16 +8,26 @@ public class Tratamento {
     private String nome;
     private Calendar dtInicio;
     private Calendar dtFim;
+    private String descricao;
     private int idAnimal;
     private boolean terminou;
 
-    public Tratamento(int id, String nome, String dtInicio, String dtFim, int idAnimal, int terminou) {
+    public Tratamento(int id, String nome, String descricao,String dtInicio, String dtFim, int idAnimal, int terminou) {
         this.id = id;
         this.nome = nome;
+        this.descricao = descricao;
         this.dtInicio = Parser.ToCalendar(dtInicio);
         this.dtFim = Parser.ToCalendar(dtFim);
         this.idAnimal = idAnimal;
         this.terminou = terminou == 1;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public String getNome() {

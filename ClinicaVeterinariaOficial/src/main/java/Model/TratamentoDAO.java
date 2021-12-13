@@ -29,15 +29,16 @@ public class TratamentoDAO extends DAO {
     }
 
     // CRUD
-    public Tratamento create(String nome, Calendar dataIni, Calendar dataFim, int id_animal, int terminado) {
+    public Tratamento create(String nome, String descricao, Calendar dataIni, Calendar dataFim, int id_animal, int terminado) {
         try {
             PreparedStatement stmt;
-            stmt = DAO.getConnection().prepareStatement("INSERT INTO tratamento (id_animal, nome, dataIni, dataFim, terminado) VALUES (?,?,?,?,?)");
+            stmt = DAO.getConnection().prepareStatement("INSERT INTO tratamento (id_animal, nome, descricao, dataIni, dataFim, terminado) VALUES (?,?,?,?,?,?)");
             stmt.setInt(1, id_animal);
             stmt.setString(2, nome);
-            stmt.setString(3, Parser.DataToString(dataIni));
-            stmt.setString(4, Parser.DataToString(dataFim));
-            stmt.setInt(5, terminado);
+            stmt.setString(3, descricao);
+            stmt.setString(4, Parser.DataToString(dataIni));
+            stmt.setString(5, Parser.DataToString(dataFim));
+            stmt.setInt(6, terminado);
             executeUpdate(stmt);
         } catch (SQLException ex) {
             Logger.getLogger(TratamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -58,7 +59,7 @@ public class TratamentoDAO extends DAO {
     private Tratamento buildObject(ResultSet rs) {
         Tratamento tratamento = null;
         try {
-            tratamento = new Tratamento(rs.getInt("id"), rs.getString("nome"), rs.getString("dataIni"), rs.getString("dataFim"), rs.getInt("id_animal"), rs.getInt("terminado"));
+            tratamento = new Tratamento(rs.getInt("id"), rs.getString("nome"), rs.getString("descricao"), rs.getString("dataIni"), rs.getString("dataFim"), rs.getInt("id_animal"), rs.getInt("terminado"));
         } catch (SQLException e) {
             System.err.println("Exception: " + e.getMessage());
         }
@@ -108,13 +109,14 @@ public class TratamentoDAO extends DAO {
     public void update(Tratamento tratamento) {
         try {
             PreparedStatement stmt;
-            stmt = DAO.getConnection().prepareStatement("UPDATE tratamento SET nome=?, dataIni=?, dataFim=?, id_animal=?, terminado=? WHERE id=?");
+            stmt = DAO.getConnection().prepareStatement("UPDATE tratamento SET nome=?, descricao=?, dataIni=?, dataFim=?, id_animal=?, terminado=? WHERE id=?");
             stmt.setString(1, tratamento.getNome());
-            stmt.setString(2, Parser.DataToString(tratamento.getDtInicio()));
-            stmt.setString(3, Parser.DataToString(tratamento.getDtFim()));
-            stmt.setInt(4, tratamento.getIdAnimal());
-            stmt.setInt(5, tratamento.getTerminou());
-            stmt.setInt(6, tratamento.getId());
+            stmt.setString(2, tratamento.getDescricao());
+            stmt.setString(3, Parser.DataToString(tratamento.getDtInicio()));
+            stmt.setString(4, Parser.DataToString(tratamento.getDtFim()));
+            stmt.setInt(5, tratamento.getIdAnimal());
+            stmt.setInt(6, tratamento.getTerminou());
+            stmt.setInt(7, tratamento.getId());
             executeUpdate(stmt);
         } catch (SQLException e) {
             System.err.println("Exception: " + e.getMessage());

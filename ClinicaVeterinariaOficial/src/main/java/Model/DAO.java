@@ -110,6 +110,7 @@ public abstract class DAO {
                     + "id INTEGER PRIMARY KEY, \n"
                     + "id_animal INTEGER, \n"
                     + "nome VARCHAR, \n"
+                    + "descricao VARCHAR, \n"
                     + "dataIni TEXT, \n"
                     + "dataFim TEXT, \n"
                     + "terminado INTEGER); \n");
