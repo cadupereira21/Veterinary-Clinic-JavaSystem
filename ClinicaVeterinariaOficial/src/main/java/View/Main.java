@@ -5,6 +5,10 @@
  */
 package View;
 
+import Control.AnimalController;
+import Control.ClienteController;
+import Model.Cliente;
+
 /**
  *
  * @author T-Gamer
@@ -16,6 +20,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        InitializeFields();
     }
 
     /**
@@ -28,107 +33,107 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        nomeClienteTextField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        emailClienteTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        telefoneClienteTextField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jTextField4 = new javax.swing.JTextField();
+        clienteTable = new javax.swing.JTable();
+        novoClienteButton = new javax.swing.JButton();
+        excluirClienteButton = new javax.swing.JButton();
+        todosClienteButton = new javax.swing.JButton();
+        buscaClienteTextField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        filtroClienteComboBox = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        buscaAnimalTextField = new javax.swing.JTextField();
+        filtroAnimalComboBox = new javax.swing.JComboBox<>();
+        todosAnimalButton = new javax.swing.JButton();
+        excluirAnimalButton = new javax.swing.JButton();
+        novoAnimalButton = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        animalTable = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
-        jTextField24 = new javax.swing.JTextField();
+        nomeNovoTratTextField = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jScrollPane11 = new javax.swing.JScrollPane();
-        jTextArea5 = new javax.swing.JTextArea();
-        jTextField25 = new javax.swing.JTextField();
+        descricaoNovoTratTextArea = new javax.swing.JTextArea();
+        dataIniNovoTratTextField = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
-        jTextField26 = new javax.swing.JTextField();
+        dataEncNovoTratTextField = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
-        jButton16 = new javax.swing.JButton();
+        novoTratamentoButton = new javax.swing.JButton();
         jLabel33 = new javax.swing.JLabel();
-        jTextField27 = new javax.swing.JTextField();
-        jComboBox6 = new javax.swing.JComboBox<>();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
+        buscarTratamentoTextField = new javax.swing.JTextField();
+        filtroTratamentoComboBox = new javax.swing.JComboBox<>();
+        todosTratamentoButton = new javax.swing.JButton();
+        excluirTratamentoButton = new javax.swing.JButton();
         jScrollPane12 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
+        tratamentoTable = new javax.swing.JTable();
         jPanel14 = new javax.swing.JPanel();
-        jTextField28 = new javax.swing.JTextField();
+        nomeNovoExameTextField = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jScrollPane13 = new javax.swing.JScrollPane();
-        jTextArea6 = new javax.swing.JTextArea();
-        jButton19 = new javax.swing.JButton();
+        descricaoNovoExameTextField = new javax.swing.JTextArea();
+        novoExameButton = new javax.swing.JButton();
         jLabel39 = new javax.swing.JLabel();
-        jTextField32 = new javax.swing.JTextField();
+        consultaNovoExameTextField = new javax.swing.JTextField();
         jLabel38 = new javax.swing.JLabel();
-        jTextField31 = new javax.swing.JTextField();
-        jComboBox7 = new javax.swing.JComboBox<>();
-        jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
+        buscarExameTextField = new javax.swing.JTextField();
+        filtroExameComboBox = new javax.swing.JComboBox<>();
+        todosExameButton = new javax.swing.JButton();
+        excluirExameButton = new javax.swing.JButton();
         jScrollPane14 = new javax.swing.JScrollPane();
-        jTable7 = new javax.swing.JTable();
+        exameTable = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
         jPanel4 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
-        jTextField21 = new javax.swing.JTextField();
+        comentariosNovoConsultaTextField = new javax.swing.JTextArea();
+        dataIniNovoConsultaTextField = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
-        jTextField22 = new javax.swing.JTextField();
+        dataEncNovoConsultaTextField = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
-        jButton10 = new javax.swing.JButton();
+        novoConsultaButton = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
-        jTextField23 = new javax.swing.JTextField();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
+        buscarConsultaTextField = new javax.swing.JTextField();
+        filtroConsultaComboBox = new javax.swing.JComboBox<>();
+        todosConsultaButton = new javax.swing.JButton();
+        excluirConsultaButton = new javax.swing.JButton();
         jScrollPane10 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        consultaTable = new javax.swing.JTable();
         jPanel7 = new javax.swing.JPanel();
-        jTextField7 = new javax.swing.JTextField();
+        nomeAnimalTextField = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        especieAnimalTextField = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        consultasAnimalList = new javax.swing.JList<>();
         jLabel8 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
-        jTextField8 = new javax.swing.JTextField();
+        nomeVetTextField = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
+        telefoneVetTextField = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
-        jTextField11 = new javax.swing.JTextField();
+        nomeTratamentoTextField = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextField12 = new javax.swing.JTextField();
+        descricaoTratamentoTextArea = new javax.swing.JTextArea();
+        dataIniTratamentoTextField = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
+        dataEncTratamentoTextField = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        encerradoTratamentoCheckBox = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(jPanel1.getBackground());
@@ -145,31 +150,31 @@ public class Main extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Arial", 1, 14), new java.awt.Color(49, 49, 51))); // NOI18N
         jPanel1.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        nomeClienteTextField.setEditable(false);
+        nomeClienteTextField.setBackground(new java.awt.Color(255, 255, 255));
+        nomeClienteTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        nomeClienteTextField.setForeground(new java.awt.Color(0, 0, 0));
+        nomeClienteTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Nome");
 
-        jTextField2.setEditable(false);
-        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        emailClienteTextField.setEditable(false);
+        emailClienteTextField.setBackground(new java.awt.Color(255, 255, 255));
+        emailClienteTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        emailClienteTextField.setForeground(new java.awt.Color(0, 0, 0));
+        emailClienteTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Email");
 
-        jTextField3.setEditable(false);
-        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        telefoneClienteTextField.setEditable(false);
+        telefoneClienteTextField.setBackground(new java.awt.Color(255, 255, 255));
+        telefoneClienteTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        telefoneClienteTextField.setForeground(new java.awt.Color(0, 0, 0));
+        telefoneClienteTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -181,14 +186,14 @@ public class Main extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1)
+                    .addComponent(nomeClienteTextField)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(telefoneClienteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emailClienteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -198,15 +203,15 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nomeClienteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(emailClienteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(telefoneClienteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );
 
@@ -216,8 +221,8 @@ public class Main extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(205, 208, 216));
         jPanel2.setBorder(null);
 
-        jTable1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        clienteTable.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        clienteTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -236,57 +241,107 @@ public class Main extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setColumnSelectionAllowed(true);
-        jTable1.setShowGrid(false);
-        jTable1.setShowHorizontalLines(true);
-        jScrollPane3.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setHeaderValue("CEP");
-            jTable1.getColumnModel().getColumn(3).setHeaderValue("Email");
-            jTable1.getColumnModel().getColumn(4).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setHeaderValue("Telefone");
+        clienteTable.setColumnSelectionAllowed(true);
+        clienteTable.setShowGrid(false);
+        clienteTable.setShowHorizontalLines(true);
+        clienteTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                clienteTableMousePressed(evt);
+            }
+        });
+        clienteTable.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                clienteTableKeyPressed(evt);
+            }
+        });
+        jScrollPane3.setViewportView(clienteTable);
+        clienteTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (clienteTable.getColumnModel().getColumnCount() > 0) {
+            clienteTable.getColumnModel().getColumn(0).setResizable(false);
+            clienteTable.getColumnModel().getColumn(1).setResizable(false);
+            clienteTable.getColumnModel().getColumn(2).setResizable(false);
+            clienteTable.getColumnModel().getColumn(2).setHeaderValue("CEP");
+            clienteTable.getColumnModel().getColumn(3).setHeaderValue("Email");
+            clienteTable.getColumnModel().getColumn(4).setResizable(false);
+            clienteTable.getColumnModel().getColumn(4).setHeaderValue("Telefone");
         }
 
-        jButton1.setText("Novo");
+        novoClienteButton.setText("Novo");
+        novoClienteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                novoClienteButtonActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Excluir");
+        excluirClienteButton.setText("Excluir");
+        excluirClienteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluirClienteButtonActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Todos");
+        todosClienteButton.setText("Todos");
+        todosClienteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                todosClienteButtonActionPerformed(evt);
+            }
+        });
 
-        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        buscaClienteTextField.setBackground(new java.awt.Color(255, 255, 255));
+        buscaClienteTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        buscaClienteTextField.setForeground(new java.awt.Color(0, 0, 0));
+        buscaClienteTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        buscaClienteTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                buscaClienteTextFieldKeyTyped(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Buscar");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nome", "Email", "Telefone" }));
+        filtroClienteComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nome", "Email", "Telefone" }));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Buscar");
 
-        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        buscaAnimalTextField.setBackground(new java.awt.Color(255, 255, 255));
+        buscaAnimalTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        buscaAnimalTextField.setForeground(new java.awt.Color(0, 0, 0));
+        buscaAnimalTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        buscaAnimalTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                buscaAnimalTextFieldKeyTyped(evt);
+            }
+        });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nome", "Ano", "Espécie", "Sexo" }));
+        filtroAnimalComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nome", "Ano", "Espécie", "Sexo" }));
 
-        jButton4.setText("Todos");
+        todosAnimalButton.setText("Todos");
+        todosAnimalButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                todosAnimalButtonActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("Excluir");
+        excluirAnimalButton.setText("Excluir");
+        excluirAnimalButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluirAnimalButtonActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("Novo");
+        novoAnimalButton.setText("Novo");
+        novoAnimalButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                novoAnimalButtonActionPerformed(evt);
+            }
+        });
 
-        jTable3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        animalTable.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        animalTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -305,16 +360,26 @@ public class Main extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable3.setColumnSelectionAllowed(true);
-        jTable3.setShowGrid(false);
-        jTable3.setShowHorizontalLines(true);
-        jScrollPane5.setViewportView(jTable3);
-        jTable3.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        if (jTable3.getColumnModel().getColumnCount() > 0) {
-            jTable3.getColumnModel().getColumn(0).setResizable(false);
-            jTable3.getColumnModel().getColumn(1).setResizable(false);
-            jTable3.getColumnModel().getColumn(2).setResizable(false);
-            jTable3.getColumnModel().getColumn(3).setResizable(false);
+        animalTable.setColumnSelectionAllowed(true);
+        animalTable.setShowGrid(false);
+        animalTable.setShowHorizontalLines(true);
+        animalTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                animalTableMousePressed(evt);
+            }
+        });
+        animalTable.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                animalTableKeyPressed(evt);
+            }
+        });
+        jScrollPane5.setViewportView(animalTable);
+        animalTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (animalTable.getColumnModel().getColumnCount() > 0) {
+            animalTable.getColumnModel().getColumn(0).setResizable(false);
+            animalTable.getColumnModel().getColumn(1).setResizable(false);
+            animalTable.getColumnModel().getColumn(2).setResizable(false);
+            animalTable.getColumnModel().getColumn(3).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -329,28 +394,28 @@ public class Main extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTextField5))
+                            .addComponent(buscaAnimalTextField))
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(filtroAnimalComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton4)
+                        .addComponent(todosAnimalButton)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton5)
+                        .addComponent(excluirAnimalButton)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton6))
+                        .addComponent(novoAnimalButton))
                     .addComponent(jScrollPane3)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(buscaClienteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(filtroClienteComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3)
+                        .addComponent(todosClienteButton)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)
+                        .addComponent(excluirClienteButton)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
+                        .addComponent(novoClienteButton)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane5))
                 .addContainerGap())
@@ -362,22 +427,22 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(0, 0, 0)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(novoClienteButton)
+                    .addComponent(excluirClienteButton)
+                    .addComponent(todosClienteButton)
+                    .addComponent(buscaClienteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(filtroClienteComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addGap(0, 0, 0)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6)
-                    .addComponent(jButton5)
-                    .addComponent(jButton4)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(novoAnimalButton)
+                    .addComponent(excluirAnimalButton)
+                    .addComponent(todosAnimalButton)
+                    .addComponent(buscaAnimalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(filtroAnimalComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -391,10 +456,10 @@ public class Main extends javax.swing.JFrame {
         jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Novo Tratamento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Arial", 1, 14), new java.awt.Color(49, 49, 51))); // NOI18N
         jPanel13.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTextField24.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField24.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField24.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField24.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        nomeNovoTratTextField.setBackground(new java.awt.Color(255, 255, 255));
+        nomeNovoTratTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        nomeNovoTratTextField.setForeground(new java.awt.Color(0, 0, 0));
+        nomeNovoTratTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel29.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(0, 0, 0));
@@ -404,32 +469,37 @@ public class Main extends javax.swing.JFrame {
         jLabel30.setForeground(new java.awt.Color(0, 0, 0));
         jLabel30.setText("Descrição");
 
-        jTextArea5.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea5.setColumns(20);
-        jTextArea5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextArea5.setForeground(new java.awt.Color(0, 0, 0));
-        jTextArea5.setRows(5);
-        jScrollPane11.setViewportView(jTextArea5);
+        descricaoNovoTratTextArea.setBackground(new java.awt.Color(255, 255, 255));
+        descricaoNovoTratTextArea.setColumns(20);
+        descricaoNovoTratTextArea.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        descricaoNovoTratTextArea.setForeground(new java.awt.Color(0, 0, 0));
+        descricaoNovoTratTextArea.setRows(5);
+        jScrollPane11.setViewportView(descricaoNovoTratTextArea);
 
-        jTextField25.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField25.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField25.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField25.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        dataIniNovoTratTextField.setBackground(new java.awt.Color(255, 255, 255));
+        dataIniNovoTratTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        dataIniNovoTratTextField.setForeground(new java.awt.Color(0, 0, 0));
+        dataIniNovoTratTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel31.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(0, 0, 0));
         jLabel31.setText("Data de Início");
 
-        jTextField26.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField26.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField26.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField26.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        dataEncNovoTratTextField.setBackground(new java.awt.Color(255, 255, 255));
+        dataEncNovoTratTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        dataEncNovoTratTextField.setForeground(new java.awt.Color(0, 0, 0));
+        dataEncNovoTratTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel32.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(0, 0, 0));
         jLabel32.setText("Data de Encerramento");
 
-        jButton16.setText("Criar");
+        novoTratamentoButton.setText("Criar");
+        novoTratamentoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                novoTratamentoButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -444,15 +514,15 @@ public class Main extends javax.swing.JFrame {
                                     .addGroup(jPanel13Layout.createSequentialGroup()
                                         .addContainerGap()
                                         .addComponent(jLabel29))
-                                    .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(nomeNovoTratTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(26, 26, 26))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField25, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dataIniNovoTratTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField26, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dataEncNovoTratTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(18, 18, 18)))
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -462,7 +532,7 @@ public class Main extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(novoTratamentoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel13Layout.setVerticalGroup(
@@ -475,20 +545,20 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addComponent(jLabel29)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nomeNovoTratTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel13Layout.createSequentialGroup()
                                 .addComponent(jLabel31)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(dataIniNovoTratTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel13Layout.createSequentialGroup()
                                 .addComponent(jLabel32)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(dataEncNovoTratTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(jButton16)
+                .addComponent(novoTratamentoButton)
                 .addContainerGap())
         );
 
@@ -496,19 +566,34 @@ public class Main extends javax.swing.JFrame {
         jLabel33.setForeground(new java.awt.Color(0, 0, 0));
         jLabel33.setText("Buscar");
 
-        jTextField27.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField27.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField27.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField27.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        buscarTratamentoTextField.setBackground(new java.awt.Color(255, 255, 255));
+        buscarTratamentoTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        buscarTratamentoTextField.setForeground(new java.awt.Color(0, 0, 0));
+        buscarTratamentoTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        buscarTratamentoTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                buscarTratamentoTextFieldKeyTyped(evt);
+            }
+        });
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nome", "Data de Início", "Data de Encerramento", "Encerrado" }));
+        filtroTratamentoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nome", "Data de Início", "Data de Encerramento", "Encerrado" }));
 
-        jButton17.setText("Todos");
+        todosTratamentoButton.setText("Todos");
+        todosTratamentoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                todosTratamentoButtonActionPerformed(evt);
+            }
+        });
 
-        jButton18.setText("Excluir");
+        excluirTratamentoButton.setText("Excluir");
+        excluirTratamentoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluirTratamentoButtonActionPerformed(evt);
+            }
+        });
 
-        jTable6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+        tratamentoTable.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tratamentoTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -527,27 +612,37 @@ public class Main extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable6.setShowGrid(false);
-        jTable6.setShowHorizontalLines(true);
-        jScrollPane12.setViewportView(jTable6);
-        jTable6.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        if (jTable6.getColumnModel().getColumnCount() > 0) {
-            jTable6.getColumnModel().getColumn(0).setResizable(false);
-            jTable6.getColumnModel().getColumn(1).setResizable(false);
-            jTable6.getColumnModel().getColumn(2).setResizable(false);
-            jTable6.getColumnModel().getColumn(2).setHeaderValue("Data de Encerramento");
-            jTable6.getColumnModel().getColumn(3).setResizable(false);
-            jTable6.getColumnModel().getColumn(3).setHeaderValue("Encerrado");
+        tratamentoTable.setShowGrid(false);
+        tratamentoTable.setShowHorizontalLines(true);
+        tratamentoTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tratamentoTableMousePressed(evt);
+            }
+        });
+        tratamentoTable.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tratamentoTableKeyPressed(evt);
+            }
+        });
+        jScrollPane12.setViewportView(tratamentoTable);
+        tratamentoTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (tratamentoTable.getColumnModel().getColumnCount() > 0) {
+            tratamentoTable.getColumnModel().getColumn(0).setResizable(false);
+            tratamentoTable.getColumnModel().getColumn(1).setResizable(false);
+            tratamentoTable.getColumnModel().getColumn(2).setResizable(false);
+            tratamentoTable.getColumnModel().getColumn(2).setHeaderValue("Data de Encerramento");
+            tratamentoTable.getColumnModel().getColumn(3).setResizable(false);
+            tratamentoTable.getColumnModel().getColumn(3).setHeaderValue("Encerrado");
         }
 
         jPanel14.setBackground(new java.awt.Color(205, 207, 216));
         jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Novo Exame", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Arial", 1, 14), new java.awt.Color(49, 49, 51))); // NOI18N
         jPanel14.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTextField28.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField28.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField28.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField28.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        nomeNovoExameTextField.setBackground(new java.awt.Color(255, 255, 255));
+        nomeNovoExameTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        nomeNovoExameTextField.setForeground(new java.awt.Color(0, 0, 0));
+        nomeNovoExameTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel34.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(0, 0, 0));
@@ -557,23 +652,28 @@ public class Main extends javax.swing.JFrame {
         jLabel35.setForeground(new java.awt.Color(0, 0, 0));
         jLabel35.setText("Descrição");
 
-        jTextArea6.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea6.setColumns(20);
-        jTextArea6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextArea6.setForeground(new java.awt.Color(0, 0, 0));
-        jTextArea6.setRows(5);
-        jScrollPane13.setViewportView(jTextArea6);
+        descricaoNovoExameTextField.setBackground(new java.awt.Color(255, 255, 255));
+        descricaoNovoExameTextField.setColumns(20);
+        descricaoNovoExameTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        descricaoNovoExameTextField.setForeground(new java.awt.Color(0, 0, 0));
+        descricaoNovoExameTextField.setRows(5);
+        jScrollPane13.setViewportView(descricaoNovoExameTextField);
 
-        jButton19.setText("Criar");
+        novoExameButton.setText("Criar");
+        novoExameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                novoExameButtonActionPerformed(evt);
+            }
+        });
 
         jLabel39.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(0, 0, 0));
         jLabel39.setText("Consulta");
 
-        jTextField32.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField32.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField32.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField32.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        consultaNovoExameTextField.setBackground(new java.awt.Color(255, 255, 255));
+        consultaNovoExameTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        consultaNovoExameTextField.setForeground(new java.awt.Color(0, 0, 0));
+        consultaNovoExameTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -583,9 +683,9 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel14Layout.createSequentialGroup()
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nomeNovoExameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel34)
-                            .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(consultaNovoExameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel39))
                         .addGap(26, 26, 26)
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -595,7 +695,7 @@ public class Main extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(novoExameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel14Layout.setVerticalGroup(
@@ -610,13 +710,13 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(jPanel14Layout.createSequentialGroup()
                         .addComponent(jLabel34)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nomeNovoExameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel39)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(consultaNovoExameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton19)
+                .addComponent(novoExameButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -624,19 +724,34 @@ public class Main extends javax.swing.JFrame {
         jLabel38.setForeground(new java.awt.Color(0, 0, 0));
         jLabel38.setText("Buscar");
 
-        jTextField31.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField31.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField31.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField31.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        buscarExameTextField.setBackground(new java.awt.Color(255, 255, 255));
+        buscarExameTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        buscarExameTextField.setForeground(new java.awt.Color(0, 0, 0));
+        buscarExameTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        buscarExameTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                buscarExameTextFieldKeyTyped(evt);
+            }
+        });
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nome", "Consulta" }));
+        filtroExameComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nome", "Consulta" }));
 
-        jButton20.setText("Todos");
+        todosExameButton.setText("Todos");
+        todosExameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                todosExameButtonActionPerformed(evt);
+            }
+        });
 
-        jButton21.setText("Excluir");
+        excluirExameButton.setText("Excluir");
+        excluirExameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluirExameButtonActionPerformed(evt);
+            }
+        });
 
-        jTable7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTable7.setModel(new javax.swing.table.DefaultTableModel(
+        exameTable.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        exameTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -655,14 +770,19 @@ public class Main extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable7.setColumnSelectionAllowed(true);
-        jTable7.setShowGrid(false);
-        jTable7.setShowHorizontalLines(true);
-        jScrollPane14.setViewportView(jTable7);
-        jTable7.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        if (jTable7.getColumnModel().getColumnCount() > 0) {
-            jTable7.getColumnModel().getColumn(0).setResizable(false);
-            jTable7.getColumnModel().getColumn(1).setResizable(false);
+        exameTable.setColumnSelectionAllowed(true);
+        exameTable.setShowGrid(false);
+        exameTable.setShowHorizontalLines(true);
+        exameTable.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                exameTableKeyPressed(evt);
+            }
+        });
+        jScrollPane14.setViewportView(exameTable);
+        exameTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (exameTable.getColumnModel().getColumnCount() > 0) {
+            exameTable.getColumnModel().getColumn(0).setResizable(false);
+            exameTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -678,26 +798,26 @@ public class Main extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel33)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jTextField27)
+                                .addComponent(buscarTratamentoTextField)
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(filtroTratamentoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton17)
+                        .addComponent(todosTratamentoButton)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton18))
+                        .addComponent(excluirTratamentoButton))
                     .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel38)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jTextField31)
+                                .addComponent(buscarExameTextField)
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(filtroExameComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton20)
+                        .addComponent(todosExameButton)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton21))
+                        .addComponent(excluirExameButton))
                     .addComponent(jSeparator1))
                 .addContainerGap())
         );
@@ -709,10 +829,10 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jLabel33)
                 .addGap(0, 0, 0)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton18)
-                    .addComponent(jButton17)
-                    .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(excluirTratamentoButton)
+                    .addComponent(todosTratamentoButton)
+                    .addComponent(buscarTratamentoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(filtroTratamentoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
@@ -723,10 +843,10 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jLabel38)
                 .addGap(0, 0, 0)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton21)
-                    .addComponent(jButton20)
-                    .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(excluirExameButton)
+                    .addComponent(todosExameButton)
+                    .addComponent(buscarExameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(filtroExameComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 5, Short.MAX_VALUE))
@@ -744,32 +864,37 @@ public class Main extends javax.swing.JFrame {
         jLabel24.setForeground(new java.awt.Color(0, 0, 0));
         jLabel24.setText("Comentários");
 
-        jTextArea3.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea3.setColumns(20);
-        jTextArea3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextArea3.setForeground(new java.awt.Color(0, 0, 0));
-        jTextArea3.setRows(5);
-        jScrollPane7.setViewportView(jTextArea3);
+        comentariosNovoConsultaTextField.setBackground(new java.awt.Color(255, 255, 255));
+        comentariosNovoConsultaTextField.setColumns(20);
+        comentariosNovoConsultaTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        comentariosNovoConsultaTextField.setForeground(new java.awt.Color(0, 0, 0));
+        comentariosNovoConsultaTextField.setRows(5);
+        jScrollPane7.setViewportView(comentariosNovoConsultaTextField);
 
-        jTextField21.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField21.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField21.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField21.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        dataIniNovoConsultaTextField.setBackground(new java.awt.Color(255, 255, 255));
+        dataIniNovoConsultaTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        dataIniNovoConsultaTextField.setForeground(new java.awt.Color(0, 0, 0));
+        dataIniNovoConsultaTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel25.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(0, 0, 0));
         jLabel25.setText("Data de Início");
 
-        jTextField22.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField22.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField22.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField22.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        dataEncNovoConsultaTextField.setBackground(new java.awt.Color(255, 255, 255));
+        dataEncNovoConsultaTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        dataEncNovoConsultaTextField.setForeground(new java.awt.Color(0, 0, 0));
+        dataEncNovoConsultaTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel26.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(0, 0, 0));
         jLabel26.setText("Data de Encerramento");
 
-        jButton10.setText("Criar");
+        novoConsultaButton.setText("Criar");
+        novoConsultaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                novoConsultaButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -779,14 +904,14 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(novoConsultaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jTextField21, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(dataIniNovoConsultaTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.LEADING))
                             .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jTextField22, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(dataEncNovoConsultaTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -803,17 +928,17 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addComponent(jLabel25)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dataIniNovoConsultaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel26)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(dataEncNovoConsultaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addComponent(jLabel24)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton10)
+                .addComponent(novoConsultaButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -821,20 +946,35 @@ public class Main extends javax.swing.JFrame {
         jLabel28.setForeground(new java.awt.Color(0, 0, 0));
         jLabel28.setText("Buscar");
 
-        jTextField23.setEditable(false);
-        jTextField23.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField23.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField23.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField23.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        buscarConsultaTextField.setEditable(false);
+        buscarConsultaTextField.setBackground(new java.awt.Color(255, 255, 255));
+        buscarConsultaTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        buscarConsultaTextField.setForeground(new java.awt.Color(0, 0, 0));
+        buscarConsultaTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        buscarConsultaTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                buscarConsultaTextFieldKeyTyped(evt);
+            }
+        });
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nome", "Data de Início", "Data de Encerramento", "Encerrado" }));
+        filtroConsultaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nome", "Data de Início", "Data de Encerramento", "Encerrado" }));
 
-        jButton14.setText("Todos");
+        todosConsultaButton.setText("Todos");
+        todosConsultaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                todosConsultaButtonActionPerformed(evt);
+            }
+        });
 
-        jButton15.setText("Excluir");
+        excluirConsultaButton.setText("Excluir");
+        excluirConsultaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluirConsultaButtonActionPerformed(evt);
+            }
+        });
 
-        jTable5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        consultaTable.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        consultaTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -853,16 +993,26 @@ public class Main extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable5.setColumnSelectionAllowed(true);
-        jTable5.setShowGrid(false);
-        jTable5.setShowHorizontalLines(true);
-        jScrollPane10.setViewportView(jTable5);
-        jTable5.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        if (jTable5.getColumnModel().getColumnCount() > 0) {
-            jTable5.getColumnModel().getColumn(0).setResizable(false);
-            jTable5.getColumnModel().getColumn(1).setResizable(false);
-            jTable5.getColumnModel().getColumn(2).setResizable(false);
-            jTable5.getColumnModel().getColumn(3).setResizable(false);
+        consultaTable.setColumnSelectionAllowed(true);
+        consultaTable.setShowGrid(false);
+        consultaTable.setShowHorizontalLines(true);
+        consultaTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                consultaTableMousePressed(evt);
+            }
+        });
+        consultaTable.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                consultaTableKeyTyped(evt);
+            }
+        });
+        jScrollPane10.setViewportView(consultaTable);
+        consultaTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (consultaTable.getColumnModel().getColumnCount() > 0) {
+            consultaTable.getColumnModel().getColumn(0).setResizable(false);
+            consultaTable.getColumnModel().getColumn(1).setResizable(false);
+            consultaTable.getColumnModel().getColumn(2).setResizable(false);
+            consultaTable.getColumnModel().getColumn(3).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -878,16 +1028,16 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jScrollPane10)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(excluirConsultaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                                        .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(buscarConsultaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(filtroConsultaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(todosConsultaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 101, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
@@ -900,10 +1050,10 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jLabel28)
                 .addGap(0, 0, 0)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton14)
-                    .addComponent(jButton15))
+                    .addComponent(buscarConsultaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(filtroConsultaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(todosConsultaButton)
+                    .addComponent(excluirConsultaButton))
                 .addGap(8, 8, 8)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -915,30 +1065,30 @@ public class Main extends javax.swing.JFrame {
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Animal", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Arial", 1, 14), new java.awt.Color(49, 49, 51))); // NOI18N
         jPanel7.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTextField7.setEditable(false);
-        jTextField7.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        nomeAnimalTextField.setEditable(false);
+        nomeAnimalTextField.setBackground(new java.awt.Color(255, 255, 255));
+        nomeAnimalTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        nomeAnimalTextField.setForeground(new java.awt.Color(0, 0, 0));
+        nomeAnimalTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Nome");
 
-        jTextField9.setEditable(false);
-        jTextField9.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField9.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        especieAnimalTextField.setEditable(false);
+        especieAnimalTextField.setBackground(new java.awt.Color(255, 255, 255));
+        especieAnimalTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        especieAnimalTextField.setForeground(new java.awt.Color(0, 0, 0));
+        especieAnimalTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Espécie");
 
-        jList1.setBackground(new java.awt.Color(255, 255, 255));
-        jList1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jList1.setForeground(new java.awt.Color(0, 0, 0));
-        jScrollPane1.setViewportView(jList1);
+        consultasAnimalList.setBackground(new java.awt.Color(255, 255, 255));
+        consultasAnimalList.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        consultasAnimalList.setForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setViewportView(consultasAnimalList);
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
@@ -952,8 +1102,8 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel7)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
-                    .addComponent(jTextField9))
+                    .addComponent(nomeAnimalTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                    .addComponent(especieAnimalTextField))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
@@ -973,11 +1123,11 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nomeAnimalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(especieAnimalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(15, 15, 15))
         );
 
@@ -985,21 +1135,21 @@ public class Main extends javax.swing.JFrame {
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Veterinário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Arial", 1, 14), new java.awt.Color(49, 49, 51))); // NOI18N
         jPanel8.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTextField8.setEditable(false);
-        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField8.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        nomeVetTextField.setEditable(false);
+        nomeVetTextField.setBackground(new java.awt.Color(255, 255, 255));
+        nomeVetTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        nomeVetTextField.setForeground(new java.awt.Color(0, 0, 0));
+        nomeVetTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Nome");
 
-        jTextField10.setEditable(false);
-        jTextField10.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField10.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        telefoneVetTextField.setEditable(false);
+        telefoneVetTextField.setBackground(new java.awt.Color(255, 255, 255));
+        telefoneVetTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        telefoneVetTextField.setForeground(new java.awt.Color(0, 0, 0));
+        telefoneVetTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
@@ -1015,9 +1165,9 @@ public class Main extends javax.swing.JFrame {
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10)
                             .addComponent(jLabel11)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(telefoneVetTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jTextField8))
+                    .addComponent(nomeVetTextField))
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
@@ -1025,11 +1175,11 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nomeVetTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(telefoneVetTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10))
         );
 
@@ -1037,11 +1187,11 @@ public class Main extends javax.swing.JFrame {
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tratamento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Arial", 1, 14), new java.awt.Color(49, 49, 51))); // NOI18N
         jPanel9.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTextField11.setEditable(false);
-        jTextField11.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField11.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField11.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        nomeTratamentoTextField.setEditable(false);
+        nomeTratamentoTextField.setBackground(new java.awt.Color(255, 255, 255));
+        nomeTratamentoTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        nomeTratamentoTextField.setForeground(new java.awt.Color(0, 0, 0));
+        nomeTratamentoTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 0, 0));
@@ -1051,43 +1201,43 @@ public class Main extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setText("Descrição");
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        descricaoTratamentoTextArea.setEditable(false);
+        descricaoTratamentoTextArea.setBackground(new java.awt.Color(255, 255, 255));
+        descricaoTratamentoTextArea.setColumns(20);
+        descricaoTratamentoTextArea.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        descricaoTratamentoTextArea.setForeground(new java.awt.Color(0, 0, 0));
+        descricaoTratamentoTextArea.setRows(5);
+        jScrollPane2.setViewportView(descricaoTratamentoTextArea);
 
-        jTextField12.setEditable(false);
-        jTextField12.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField12.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField12.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        dataIniTratamentoTextField.setEditable(false);
+        dataIniTratamentoTextField.setBackground(new java.awt.Color(255, 255, 255));
+        dataIniTratamentoTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        dataIniTratamentoTextField.setForeground(new java.awt.Color(0, 0, 0));
+        dataIniTratamentoTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Data de Início");
 
-        jTextField13.setEditable(false);
-        jTextField13.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField13.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField13.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        dataEncTratamentoTextField.setEditable(false);
+        dataEncTratamentoTextField.setBackground(new java.awt.Color(255, 255, 255));
+        dataEncTratamentoTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        dataEncTratamentoTextField.setForeground(new java.awt.Color(0, 0, 0));
+        dataEncTratamentoTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel16.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setText("Data de Encerramento");
 
-        jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox1.setSelected(true);
-        jCheckBox1.setText("Encerrado");
-        jCheckBox1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        encerradoTratamentoCheckBox.setBackground(new java.awt.Color(255, 255, 255));
+        encerradoTratamentoCheckBox.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        encerradoTratamentoCheckBox.setForeground(new java.awt.Color(0, 0, 0));
+        encerradoTratamentoCheckBox.setSelected(true);
+        encerradoTratamentoCheckBox.setText("Encerrado");
+        encerradoTratamentoCheckBox.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        encerradoTratamentoCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                encerradoTratamentoCheckBoxActionPerformed(evt);
             }
         });
 
@@ -1097,13 +1247,13 @@ public class Main extends javax.swing.JFrame {
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nomeTratamentoTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jTextField12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dataIniTratamentoTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING))
                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jTextField13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dataEncTratamentoTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1113,7 +1263,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jCheckBox1)))
+                        .addComponent(encerradoTratamentoCheckBox)))
                 .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
@@ -1123,21 +1273,21 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nomeTratamentoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dataIniTratamentoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(dataEncTratamentoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox1)))
+                        .addComponent(encerradoTratamentoCheckBox)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1172,9 +1322,136 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    //<editor-fold desc="Funções Cliente">
+    private void buscaClienteTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscaClienteTextFieldKeyTyped
+        ClienteController.Search((String)filtroClienteComboBox.getSelectedItem(), buscaClienteTextField.getText());
+    }//GEN-LAST:event_buscaClienteTextFieldKeyTyped
+
+    private void todosClienteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todosClienteButtonActionPerformed
+        ClienteController.ResetTableModel();
+        buscaClienteTextField.setText("");
+    }//GEN-LAST:event_todosClienteButtonActionPerformed
+
+    private void excluirClienteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirClienteButtonActionPerformed
+        ClienteController.Delete();
+    }//GEN-LAST:event_excluirClienteButtonActionPerformed
+
+    private void novoClienteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoClienteButtonActionPerformed
+        ClienteController.Create();
+    }//GEN-LAST:event_novoClienteButtonActionPerformed
+
+    private void clienteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clienteTableMousePressed
+        ClienteController.Read();
+    }//GEN-LAST:event_clienteTableMousePressed
+
+    private void clienteTableKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clienteTableKeyPressed
+        if(evt.getKeyCode() == 10) { ClienteController.Update(); }
+    }//GEN-LAST:event_clienteTableKeyPressed
+    //</editor-fold>
+
+    //<editor-fold desc="Funções Animal">
+    private void buscaAnimalTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscaAnimalTextFieldKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_buscaAnimalTextFieldKeyTyped
+
+    private void todosAnimalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todosAnimalButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_todosAnimalButtonActionPerformed
+
+    private void excluirAnimalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirAnimalButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_excluirAnimalButtonActionPerformed
+
+    private void novoAnimalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoAnimalButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_novoAnimalButtonActionPerformed
+
+    private void animalTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_animalTableMousePressed
+        AnimalController.Read();
+    }//GEN-LAST:event_animalTableMousePressed
+
+    private void animalTableKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_animalTableKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_animalTableKeyPressed
+    //</editor-fold>
+
+    //<editor-fold desc="Funções Tratamento">
+    private void novoTratamentoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoTratamentoButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_novoTratamentoButtonActionPerformed
+
+    private void buscarTratamentoTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscarTratamentoTextFieldKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buscarTratamentoTextFieldKeyTyped
+
+    private void encerradoTratamentoCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encerradoTratamentoCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_encerradoTratamentoCheckBoxActionPerformed
+
+    private void todosTratamentoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todosTratamentoButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_todosTratamentoButtonActionPerformed
+
+    private void excluirTratamentoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirTratamentoButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_excluirTratamentoButtonActionPerformed
+
+    private void tratamentoTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tratamentoTableMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tratamentoTableMousePressed
+
+    private void tratamentoTableKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tratamentoTableKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tratamentoTableKeyPressed
+    //</editor-fold>
+
+    //<editor-fold desc="Funções Exame">
+    private void novoExameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoExameButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_novoExameButtonActionPerformed
+
+    private void buscarExameTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscarExameTextFieldKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buscarExameTextFieldKeyTyped
+
+    private void todosExameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todosExameButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_todosExameButtonActionPerformed
+
+    private void excluirExameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirExameButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_excluirExameButtonActionPerformed
+
+    private void exameTableKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_exameTableKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_exameTableKeyPressed
+    //</editor-fold>
+
+    //<editor-fold desc="Funções Consulta">
+    private void novoConsultaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoConsultaButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_novoConsultaButtonActionPerformed
+
+    private void buscarConsultaTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscarConsultaTextFieldKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buscarConsultaTextFieldKeyTyped
+
+    private void todosConsultaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todosConsultaButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_todosConsultaButtonActionPerformed
+
+    private void excluirConsultaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirConsultaButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_excluirConsultaButtonActionPerformed
+
+    private void consultaTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultaTableMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_consultaTableMousePressed
+
+    private void consultaTableKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_consultaTableKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_consultaTableKeyTyped
+    //</editor-fold>
 
     /**
      * @param args the command line arguments
@@ -1212,28 +1489,49 @@ public class Main extends javax.swing.JFrame {
         });
     }
 
+    public void InitializeFields(){
+        ClienteController.SetFields(nomeClienteTextField, emailClienteTextField, telefoneClienteTextField, clienteTable);
+        AnimalController.SetFields(nomeAnimalTextField, especieAnimalTextField, consultasAnimalList, animalTable);
+        ClienteController.ResetTableModel();
+        AnimalController.ResetTableModel();
+    }
+
+    //<editor-fold desc="Variables Declaration">
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
+    private javax.swing.JTable animalTable;
+    private javax.swing.JTextField buscaAnimalTextField;
+    private javax.swing.JTextField buscaClienteTextField;
+    private javax.swing.JTextField buscarConsultaTextField;
+    private javax.swing.JTextField buscarExameTextField;
+    private javax.swing.JTextField buscarTratamentoTextField;
+    private javax.swing.JTable clienteTable;
+    private javax.swing.JTextArea comentariosNovoConsultaTextField;
+    private javax.swing.JTextField consultaNovoExameTextField;
+    private javax.swing.JTable consultaTable;
+    private javax.swing.JList<String> consultasAnimalList;
+    private javax.swing.JTextField dataEncNovoConsultaTextField;
+    private javax.swing.JTextField dataEncNovoTratTextField;
+    private javax.swing.JTextField dataEncTratamentoTextField;
+    private javax.swing.JTextField dataIniNovoConsultaTextField;
+    private javax.swing.JTextField dataIniNovoTratTextField;
+    private javax.swing.JTextField dataIniTratamentoTextField;
+    private javax.swing.JTextArea descricaoNovoExameTextField;
+    private javax.swing.JTextArea descricaoNovoTratTextArea;
+    private javax.swing.JTextArea descricaoTratamentoTextArea;
+    private javax.swing.JTextField emailClienteTextField;
+    private javax.swing.JCheckBox encerradoTratamentoCheckBox;
+    private javax.swing.JTextField especieAnimalTextField;
+    private javax.swing.JTable exameTable;
+    private javax.swing.JButton excluirAnimalButton;
+    private javax.swing.JButton excluirClienteButton;
+    private javax.swing.JButton excluirConsultaButton;
+    private javax.swing.JButton excluirExameButton;
+    private javax.swing.JButton excluirTratamentoButton;
+    private javax.swing.JComboBox<String> filtroAnimalComboBox;
+    private javax.swing.JComboBox<String> filtroClienteComboBox;
+    private javax.swing.JComboBox<String> filtroConsultaComboBox;
+    private javax.swing.JComboBox<String> filtroExameComboBox;
+    private javax.swing.JComboBox<String> filtroTratamentoComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1261,7 +1559,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel13;
@@ -1284,36 +1581,25 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JTable jTable6;
-    private javax.swing.JTable jTable7;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextArea jTextArea6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField31;
-    private javax.swing.JTextField jTextField32;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField nomeAnimalTextField;
+    private javax.swing.JTextField nomeClienteTextField;
+    private javax.swing.JTextField nomeNovoExameTextField;
+    private javax.swing.JTextField nomeNovoTratTextField;
+    private javax.swing.JTextField nomeTratamentoTextField;
+    private javax.swing.JTextField nomeVetTextField;
+    private javax.swing.JButton novoAnimalButton;
+    private javax.swing.JButton novoClienteButton;
+    private javax.swing.JButton novoConsultaButton;
+    private javax.swing.JButton novoExameButton;
+    private javax.swing.JButton novoTratamentoButton;
+    private javax.swing.JTextField telefoneClienteTextField;
+    private javax.swing.JTextField telefoneVetTextField;
+    private javax.swing.JButton todosAnimalButton;
+    private javax.swing.JButton todosClienteButton;
+    private javax.swing.JButton todosConsultaButton;
+    private javax.swing.JButton todosExameButton;
+    private javax.swing.JButton todosTratamentoButton;
+    private javax.swing.JTable tratamentoTable;
     // End of variables declaration//GEN-END:variables
+    //</editor-fold>
 }

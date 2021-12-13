@@ -64,7 +64,7 @@ public class ClienteDAO extends DAO {
     }
 
     // Generic Retriever
-    public List retrieve(String query) {
+    public List<Cliente> retrieve(String query) {
         List<Cliente> clientes = new ArrayList();
         ResultSet rs = getResultSet(query);
         try {
@@ -78,12 +78,12 @@ public class ClienteDAO extends DAO {
     }
 
     // RetrieveAll
-    public List retrieveAll() {
+    public List<Cliente> retrieveAll() {
         return this.retrieve("SELECT * FROM cliente");
     }
 
     // RetrieveLast
-    public List retrieveLast(){
+    public List<Cliente> retrieveLast(){
         return this.retrieve("SELECT * FROM cliente WHERE id = " + lastId("cliente","id"));
     }
 
@@ -94,15 +94,15 @@ public class ClienteDAO extends DAO {
     }
 
     // RetrieveBySimilarName
-    public List retrieveBySimilarName(String nome) {
+    public List<Cliente> retrieveBySimilarName(String nome) {
         return this.retrieve("SELECT * FROM cliente WHERE nome LIKE '%" + nome + "%'");
     }
 
-    public List retrieveByEmail(String email) {
+    public List<Cliente> retrieveByEmail(String email) {
         return this.retrieve("SELECT * FROM cliente WHERE email LIKE '%" + email + "%'");
     }
 
-    public List retrieveByPhone(String phone) {
+    public List<Cliente> retrieveByPhone(String phone) {
         return this.retrieve("SELECT * FROM cliente WHERE telefone LIKE '%" + phone + "%'");
     }
 

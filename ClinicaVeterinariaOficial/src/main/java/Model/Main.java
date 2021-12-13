@@ -10,7 +10,9 @@ import java.util.Calendar;
 public class Main {
     public static void main(String[] args) {
 
-//       ClienteDAO.getInstance().create("Carlos", "Rua dos pássaros, 234, Piracicaba-SP", "13425620", "carloseduardo2101@gmail.com", "19996060222");
+//        EspecieDAO.getInstance().create("Cavalo");
+//
+//        ClienteDAO.getInstance().create("Carlos", "Rua dos pássaros, 234, Piracicaba-SP", "13425620", "carloseduardo2101@gmail.com", "19996060222");
 //        ClienteDAO.getInstance().create("Luiz", "Rua dos bobos, 324, Campinas-SP", "13245678", "luiz@gmail.com", "19996660504");
 //        ClienteDAO.getInstance().create("Pedro", "Rua dos pedros, 100, Piracicaba-SP", "13234234", "pedro@gmail.com", "19993008989");
 //        ClienteDAO.getInstance().create("Vitor", "Rua das cachoeiras, 124, Limeira-SP", "13566545", "vitor@gmail.com", "19984752222");
@@ -22,29 +24,29 @@ public class Main {
 //        AnimalDAO.getInstance().create(3, "Lila", 2012, "Feminino", 1);
 //        AnimalDAO.getInstance().create(4, "Pipoca", 2012, "Masculino", 1);
 //        AnimalDAO.getInstance().create(4, "Relâmpago", 2015, "Masculino", 2);
-
+//
 //        Calendar ini = Calendar.getInstance();
 //        Calendar fim = Calendar.getInstance();
 //
 //        ini.set(2022, 1, 1);
 //        fim.set(2022, 12, 30);
-//        TratamentoDAO.getInstance().create("Fisioterapia", ini, fim, 1, 0);
+//        TratamentoDAO.getInstance().create("Fisioterapia", "", ini, fim, 0, 0);
 //
 //        ini.set(2021, 8, 1);
 //        fim.set(2022, 12, 30);
-//        TratamentoDAO.getInstance().create("Vermicida", ini, fim, 2, 0);
+//        TratamentoDAO.getInstance().create("Vermicida", "", ini, fim, 2, 0);
 //
 //        ini.set(2019, 1, 1);
 //        fim.set(2022, 1, 1);
-//        TratamentoDAO.getInstance().create("Fisioterapia", ini, fim, 2, 0);
+//        TratamentoDAO.getInstance().create("Fisioterapia", "", ini, fim, 2, 0);
 //
 //        ini.set(2021, 12, 1);
 //        fim.set(2022, 1, 1);
-//        TratamentoDAO.getInstance().create("Remédio para Gripe", ini, fim, 7, 0);
+//        TratamentoDAO.getInstance().create("Remédio para Gripe", "", ini, fim, 7, 0);
 //
 //        ini.set(2021, 12, 1);
 //        fim.set(2022, 1, 1);
-//        TratamentoDAO.getInstance().create("Combate às Pulgas", ini, fim, 4, 0);
+//        TratamentoDAO.getInstance().create("Combate às Pulgas", "", ini, fim, 4, 0);
 //
 //        Calendar data = Calendar.getInstance();
 //        data.set(2022, 1, 10, 9, 0, 0);
@@ -60,6 +62,6 @@ public class Main {
 //        ConsultaDAO.getInstance().create("15/12/2021", "10", "Não trazer animal selado", 7, 1, 4, 0);
 //        ConsultaDAO.getInstance().create("10/12/2021", "15", "", 4, 1, 5, 0);
 
-        System.out.println(ConsultaDAO.getInstance().retrieveById(1).getData().get(Calendar.HOUR_OF_DAY));
+        System.out.println();
     }
 }
