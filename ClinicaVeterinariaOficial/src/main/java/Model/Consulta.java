@@ -43,15 +43,11 @@ public class Consulta {
 
     @Override
     public String   toString() {
-        return "Consulta{" +
-                "id=" + id +
-                ", data='" + data.toString() + '\'' +
-                ", comentarios='" + comentarios + '\'' +
-                ", idAnimal=" + idAnimal +
-                ", idVeterinario=" + idVeterinario +
-                ", idTratamento=" + idTratamento +
-                ", terminou=" + terminou +
-                '}';
+        var minutes  = getData().get(Calendar.MINUTE) == 0 ? "" : getData().get(Calendar.MINUTE);
+
+        return "[ " + getData().get(Calendar.DAY_OF_MONTH) + "/" + getData().get(Calendar.MONTH)+1 + "/" + getData().get(Calendar.YEAR) + " - "
+                + getData().get(Calendar.HOUR_OF_DAY) + "h" + minutes + " ] " + TratamentoDAO.getInstance().retrieveById(getIdTratamento()).getNome()
+                + " (" + getComentarios() + ")";
     }
 }
 

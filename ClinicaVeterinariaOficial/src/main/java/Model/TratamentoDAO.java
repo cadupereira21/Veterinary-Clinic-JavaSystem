@@ -105,6 +105,10 @@ public class TratamentoDAO extends DAO {
         return this.retrieve("SELECT * FROM tratamento WHERE nome LIKE '%" + nome + "%'");
     }
 
+    public List<Tratamento> retrieveBySimilarName(String nome, int idAnimal) {
+        return this.retrieve("SELECT * FROM tratamento WHERE nome LIKE '%" + nome + "%' AND id_animal = " + idAnimal);
+    }
+
     // Updade
     public void update(Tratamento tratamento) {
         try {

@@ -21,14 +21,14 @@ public class Parser {
 
         int dia, mes, ano;
 
-        String[] aux = data.split("\\-");
+        String[] aux = data.split("\\/");
 
-        ano = Integer.parseInt(aux[0]);
+        ano = Integer.parseInt(aux[2]);
         mes = Integer.parseInt(aux[1]);
-        dia = Integer.parseInt(aux[2]);
+        dia = Integer.parseInt(aux[0]);
 
         Calendar auxiliar = Calendar.getInstance();
-        auxiliar.set(ano, mes, dia);
+        auxiliar.set(ano, mes-1, dia);
 
         return auxiliar;
     }
@@ -43,11 +43,11 @@ public class Parser {
     }
 
     public static String DataToString(Calendar c){
-        return "" + c.get(Calendar.YEAR) + "-" + c.get(Calendar.MONTH) + "-" + c.get(Calendar.DAY_OF_MONTH);
+        return "" + c.get(Calendar.DAY_OF_MONTH) + "/" + c.get(Calendar.MONTH)+1 + "/" + c.get(Calendar.YEAR);
     }
 
     public static String HorarioToString(Calendar c){
-        return "" + c.get(Calendar.HOUR_OF_DAY) + ":" + c.get(Calendar.MINUTE) + ":00";
+        return "" + c.get(Calendar.HOUR_OF_DAY) + ":" + c.get(Calendar.MINUTE);
     }
 
 }

@@ -5,9 +5,11 @@
  */
 package View;
 
-import Control.AnimalController;
-import Control.ClienteController;
-import Model.Cliente;
+import Control.*;
+import Model.Consulta;
+
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -58,17 +60,6 @@ public class Main extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         animalTable = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
-        nomeNovoTratTextField = new javax.swing.JTextField();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        descricaoNovoTratTextArea = new javax.swing.JTextArea();
-        dataIniNovoTratTextField = new javax.swing.JTextField();
-        jLabel31 = new javax.swing.JLabel();
-        dataEncNovoTratTextField = new javax.swing.JTextField();
-        jLabel32 = new javax.swing.JLabel();
-        novoTratamentoButton = new javax.swing.JButton();
         jLabel33 = new javax.swing.JLabel();
         buscarTratamentoTextField = new javax.swing.JTextField();
         filtroTratamentoComboBox = new javax.swing.JComboBox<>();
@@ -95,14 +86,20 @@ public class Main extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jPanel4 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
+        dataNovoConsultaTextField = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        novoConsultaButton = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        examesListNovaConsulta = new javax.swing.JList<>();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        horariosListNovaConsulta = new javax.swing.JList<>();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        nomeVetNovoConsultaTextField = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         comentariosNovoConsultaTextField = new javax.swing.JTextArea();
-        dataIniNovoConsultaTextField = new javax.swing.JTextField();
-        jLabel25 = new javax.swing.JLabel();
-        dataEncNovoConsultaTextField = new javax.swing.JTextField();
-        jLabel26 = new javax.swing.JLabel();
-        novoConsultaButton = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
         buscarConsultaTextField = new javax.swing.JTextField();
         filtroConsultaComboBox = new javax.swing.JComboBox<>();
@@ -134,6 +131,8 @@ public class Main extends javax.swing.JFrame {
         dataEncTratamentoTextField = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         encerradoTratamentoCheckBox = new javax.swing.JCheckBox();
+        novoTratamentoButton = new javax.swing.JButton();
+        atualizarTratamentoButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(jPanel1.getBackground());
@@ -452,116 +451,6 @@ public class Main extends javax.swing.JFrame {
 
         jPanel3.setBackground(jPanel1.getBackground());
 
-        jPanel13.setBackground(new java.awt.Color(205, 207, 216));
-        jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Novo Tratamento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Arial", 1, 14), new java.awt.Color(49, 49, 51))); // NOI18N
-        jPanel13.setForeground(new java.awt.Color(0, 0, 0));
-
-        nomeNovoTratTextField.setBackground(new java.awt.Color(255, 255, 255));
-        nomeNovoTratTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        nomeNovoTratTextField.setForeground(new java.awt.Color(0, 0, 0));
-        nomeNovoTratTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        jLabel29.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel29.setText("Nome");
-
-        jLabel30.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel30.setText("Descrição");
-
-        descricaoNovoTratTextArea.setBackground(new java.awt.Color(255, 255, 255));
-        descricaoNovoTratTextArea.setColumns(20);
-        descricaoNovoTratTextArea.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        descricaoNovoTratTextArea.setForeground(new java.awt.Color(0, 0, 0));
-        descricaoNovoTratTextArea.setRows(5);
-        jScrollPane11.setViewportView(descricaoNovoTratTextArea);
-
-        dataIniNovoTratTextField.setBackground(new java.awt.Color(255, 255, 255));
-        dataIniNovoTratTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        dataIniNovoTratTextField.setForeground(new java.awt.Color(0, 0, 0));
-        dataIniNovoTratTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        jLabel31.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel31.setText("Data de Início");
-
-        dataEncNovoTratTextField.setBackground(new java.awt.Color(255, 255, 255));
-        dataEncNovoTratTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        dataEncNovoTratTextField.setForeground(new java.awt.Color(0, 0, 0));
-        dataEncNovoTratTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        jLabel32.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel32.setText("Data de Encerramento");
-
-        novoTratamentoButton.setText("Criar");
-        novoTratamentoButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                novoTratamentoButtonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel13Layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(jLabel29))
-                                    .addComponent(nomeNovoTratTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(26, 26, 26))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(dataIniNovoTratTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(dataEncNovoTratTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(18, 18, 18)))
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addComponent(jLabel30)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(novoTratamentoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel30)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addComponent(jLabel29)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nomeNovoTratTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addComponent(jLabel31)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(dataIniNovoTratTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addComponent(jLabel32)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(dataEncNovoTratTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(novoTratamentoButton)
-                .addContainerGap())
-        );
-
         jLabel33.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(0, 0, 0));
         jLabel33.setText("Buscar");
@@ -612,6 +501,7 @@ public class Main extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        tratamentoTable.setColumnSelectionAllowed(true);
         tratamentoTable.setShowGrid(false);
         tratamentoTable.setShowHorizontalLines(true);
         tratamentoTable.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -630,9 +520,7 @@ public class Main extends javax.swing.JFrame {
             tratamentoTable.getColumnModel().getColumn(0).setResizable(false);
             tratamentoTable.getColumnModel().getColumn(1).setResizable(false);
             tratamentoTable.getColumnModel().getColumn(2).setResizable(false);
-            tratamentoTable.getColumnModel().getColumn(2).setHeaderValue("Data de Encerramento");
             tratamentoTable.getColumnModel().getColumn(3).setResizable(false);
-            tratamentoTable.getColumnModel().getColumn(3).setHeaderValue("Encerrado");
         }
 
         jPanel14.setBackground(new java.awt.Color(205, 207, 216));
@@ -792,7 +680,6 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -824,8 +711,7 @@ public class Main extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(19, 19, 19)
                 .addComponent(jLabel33)
                 .addGap(0, 0, 0)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -834,9 +720,9 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(buscarTratamentoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(filtroTratamentoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -848,8 +734,8 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(buscarExameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(filtroExameComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 5, Short.MAX_VALUE))
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Tratamento", jPanel3);
@@ -859,6 +745,52 @@ public class Main extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(205, 207, 216));
         jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nova Consulta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Arial", 1, 14), new java.awt.Color(49, 49, 51))); // NOI18N
         jPanel11.setForeground(new java.awt.Color(0, 0, 0));
+
+        dataNovoConsultaTextField.setBackground(new java.awt.Color(255, 255, 255));
+        dataNovoConsultaTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        dataNovoConsultaTextField.setForeground(new java.awt.Color(0, 0, 0));
+        dataNovoConsultaTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        dataNovoConsultaTextField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                dataNovoConsultaTextFieldKeyTyped(e);
+            }
+        });
+
+        jLabel25.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel25.setText("Data");
+
+        novoConsultaButton.setText("Criar");
+        novoConsultaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                novoConsultaButtonActionPerformed(evt);
+            }
+        });
+
+        examesListNovaConsulta.setBackground(new java.awt.Color(255, 255, 255));
+        examesListNovaConsulta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        examesListNovaConsulta.setForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane4.setViewportView(examesListNovaConsulta);
+
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Exames");
+
+        jScrollPane6.setViewportView(horariosListNovaConsulta);
+
+        jLabel12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setText("Horário");
+
+        jLabel26.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel26.setText("Veterinário");
+
+        nomeVetNovoConsultaTextField.setBackground(new java.awt.Color(255, 255, 255));
+        nomeVetNovoConsultaTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        nomeVetNovoConsultaTextField.setForeground(new java.awt.Color(0, 0, 0));
+        nomeVetNovoConsultaTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel24.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(0, 0, 0));
@@ -871,75 +803,68 @@ public class Main extends javax.swing.JFrame {
         comentariosNovoConsultaTextField.setRows(5);
         jScrollPane7.setViewportView(comentariosNovoConsultaTextField);
 
-        dataIniNovoConsultaTextField.setBackground(new java.awt.Color(255, 255, 255));
-        dataIniNovoConsultaTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        dataIniNovoConsultaTextField.setForeground(new java.awt.Color(0, 0, 0));
-        dataIniNovoConsultaTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        jLabel25.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel25.setText("Data de Início");
-
-        dataEncNovoConsultaTextField.setBackground(new java.awt.Color(255, 255, 255));
-        dataEncNovoConsultaTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        dataEncNovoConsultaTextField.setForeground(new java.awt.Color(0, 0, 0));
-        dataEncNovoConsultaTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        jLabel26.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel26.setText("Data de Encerramento");
-
-        novoConsultaButton.setText("Criar");
-        novoConsultaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                novoConsultaButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(novoConsultaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(dataIniNovoConsultaTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(dataEncNovoConsultaTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane7)
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addComponent(jLabel24)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(dataNovoConsultaTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nomeVetNovoConsultaTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel25)
+                                    .addComponent(jLabel26))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(25, 25, 25)))
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel24)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(novoConsultaButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(novoConsultaButton))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
                         .addComponent(jLabel25)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dataIniNovoConsultaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(dataNovoConsultaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel26)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dataEncNovoConsultaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(jLabel24)
+                        .addComponent(nomeVetNovoConsultaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(novoConsultaButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addGap(20, 20, 20))
         );
 
         jLabel28.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -1044,8 +969,7 @@ public class Main extends javax.swing.JFrame {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel28)
                 .addGap(0, 0, 0)
@@ -1055,7 +979,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(todosConsultaButton)
                     .addComponent(excluirConsultaButton))
                 .addGap(8, 8, 8)
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1187,7 +1111,6 @@ public class Main extends javax.swing.JFrame {
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tratamento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Arial", 1, 14), new java.awt.Color(49, 49, 51))); // NOI18N
         jPanel9.setForeground(new java.awt.Color(0, 0, 0));
 
-        nomeTratamentoTextField.setEditable(false);
         nomeTratamentoTextField.setBackground(new java.awt.Color(255, 255, 255));
         nomeTratamentoTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         nomeTratamentoTextField.setForeground(new java.awt.Color(0, 0, 0));
@@ -1201,7 +1124,6 @@ public class Main extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setText("Descrição");
 
-        descricaoTratamentoTextArea.setEditable(false);
         descricaoTratamentoTextArea.setBackground(new java.awt.Color(255, 255, 255));
         descricaoTratamentoTextArea.setColumns(20);
         descricaoTratamentoTextArea.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -1209,7 +1131,6 @@ public class Main extends javax.swing.JFrame {
         descricaoTratamentoTextArea.setRows(5);
         jScrollPane2.setViewportView(descricaoTratamentoTextArea);
 
-        dataIniTratamentoTextField.setEditable(false);
         dataIniTratamentoTextField.setBackground(new java.awt.Color(255, 255, 255));
         dataIniTratamentoTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         dataIniTratamentoTextField.setForeground(new java.awt.Color(0, 0, 0));
@@ -1219,7 +1140,6 @@ public class Main extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Data de Início");
 
-        dataEncTratamentoTextField.setEditable(false);
         dataEncTratamentoTextField.setBackground(new java.awt.Color(255, 255, 255));
         dataEncTratamentoTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         dataEncTratamentoTextField.setForeground(new java.awt.Color(0, 0, 0));
@@ -1238,6 +1158,15 @@ public class Main extends javax.swing.JFrame {
         encerradoTratamentoCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 encerradoTratamentoCheckBoxActionPerformed(evt);
+            }
+        });
+
+        novoTratamentoButton.setText("Novo Tratamento");
+
+        atualizarTratamentoButton.setText("Atualizar");
+        atualizarTratamentoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atualizarTratamentoButtonActionPerformed(evt);
             }
         });
 
@@ -1263,7 +1192,11 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(encerradoTratamentoCheckBox)))
+                        .addComponent(encerradoTratamentoCheckBox))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                        .addComponent(atualizarTratamentoButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(novoTratamentoButton)))
                 .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
@@ -1277,17 +1210,23 @@ public class Main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dataIniTratamentoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(dataIniTratamentoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(encerradoTratamentoCheckBox)))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(jLabel16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(dataEncTratamentoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(encerradoTratamentoCheckBox)))
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(novoTratamentoButton)
+                            .addComponent(atualizarTratamentoButton))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1330,6 +1269,10 @@ public class Main extends javax.swing.JFrame {
     private void todosClienteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todosClienteButtonActionPerformed
         ClienteController.ResetTableModel();
         buscaClienteTextField.setText("");
+        AnimalController.ResetTextFields();
+        AnimalController.SetTableModel();
+        TratamentoController.ResetTextFields();
+        ConsultaController.ResetTableModel();
     }//GEN-LAST:event_todosClienteButtonActionPerformed
 
     private void excluirClienteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirClienteButtonActionPerformed
@@ -1351,19 +1294,19 @@ public class Main extends javax.swing.JFrame {
 
     //<editor-fold desc="Funções Animal">
     private void buscaAnimalTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscaAnimalTextFieldKeyTyped
-        // TODO add your handling code here:
+        AnimalController.Search((String)filtroAnimalComboBox.getSelectedItem(), buscaAnimalTextField.getText());
     }//GEN-LAST:event_buscaAnimalTextFieldKeyTyped
 
     private void todosAnimalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todosAnimalButtonActionPerformed
-        // TODO add your handling code here:
+        AnimalController.SetTableModel();
     }//GEN-LAST:event_todosAnimalButtonActionPerformed
 
     private void excluirAnimalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirAnimalButtonActionPerformed
-        // TODO add your handling code here:
+        AnimalController.Delete();
     }//GEN-LAST:event_excluirAnimalButtonActionPerformed
 
     private void novoAnimalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoAnimalButtonActionPerformed
-        // TODO add your handling code here:
+        AnimalController.Create();
     }//GEN-LAST:event_novoAnimalButtonActionPerformed
 
     private void animalTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_animalTableMousePressed
@@ -1371,17 +1314,17 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_animalTableMousePressed
 
     private void animalTableKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_animalTableKeyPressed
-        // TODO add your handling code here:
+        AnimalController.Update();
     }//GEN-LAST:event_animalTableKeyPressed
+
+    private void consultasAnimalListMousePressed(java.awt.event.MouseEvent evt){
+        AnimalController.SelecionarConsulta();
+    }
     //</editor-fold>
 
     //<editor-fold desc="Funções Tratamento">
-    private void novoTratamentoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoTratamentoButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_novoTratamentoButtonActionPerformed
-
     private void buscarTratamentoTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscarTratamentoTextFieldKeyTyped
-        // TODO add your handling code here:
+        TratamentoController.Search((String)filtroTratamentoComboBox.getSelectedItem(), buscarTratamentoTextField.getText());
     }//GEN-LAST:event_buscarTratamentoTextFieldKeyTyped
 
     private void encerradoTratamentoCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encerradoTratamentoCheckBoxActionPerformed
@@ -1389,25 +1332,33 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_encerradoTratamentoCheckBoxActionPerformed
 
     private void todosTratamentoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todosTratamentoButtonActionPerformed
-        // TODO add your handling code here:
+        TratamentoController.ResetTableModel();
     }//GEN-LAST:event_todosTratamentoButtonActionPerformed
 
     private void excluirTratamentoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirTratamentoButtonActionPerformed
-        // TODO add your handling code here:
+        TratamentoController.Delete();
     }//GEN-LAST:event_excluirTratamentoButtonActionPerformed
 
     private void tratamentoTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tratamentoTableMousePressed
-        // TODO add your handling code here:
+        TratamentoController.Read();
     }//GEN-LAST:event_tratamentoTableMousePressed
 
     private void tratamentoTableKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tratamentoTableKeyPressed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_tratamentoTableKeyPressed
+
+    private void atualizarTratamentoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarTratamentoButtonActionPerformed
+        TratamentoController.Update();
+    }//GEN-LAST:event_atualizarTratamentoButtonActionPerformed
+
+    private void novoTratamentoButtonActionPerformed(java.awt.event.ActionEvent evt){
+        TratamentoController.Create();
+    }
     //</editor-fold>
 
     //<editor-fold desc="Funções Exame">
     private void novoExameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoExameButtonActionPerformed
-        // TODO add your handling code here:
+        ExameController.Create();
     }//GEN-LAST:event_novoExameButtonActionPerformed
 
     private void buscarExameTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscarExameTextFieldKeyTyped
@@ -1415,21 +1366,25 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_buscarExameTextFieldKeyTyped
 
     private void todosExameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todosExameButtonActionPerformed
-        // TODO add your handling code here:
+        ExameController.SetTableModel();
     }//GEN-LAST:event_todosExameButtonActionPerformed
 
     private void excluirExameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirExameButtonActionPerformed
-        // TODO add your handling code here:
+        ExameController.Delete();
     }//GEN-LAST:event_excluirExameButtonActionPerformed
 
     private void exameTableKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_exameTableKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_exameTableKeyPressed
+
+    private void exameTableMousePressed(java.awt.event.MouseEvent evt){
+        ExameController.Read();
+    }
     //</editor-fold>
 
     //<editor-fold desc="Funções Consulta">
     private void novoConsultaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoConsultaButtonActionPerformed
-        // TODO add your handling code here:
+        ConsultaController.Create();
     }//GEN-LAST:event_novoConsultaButtonActionPerformed
 
     private void buscarConsultaTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscarConsultaTextFieldKeyTyped
@@ -1437,20 +1392,24 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_buscarConsultaTextFieldKeyTyped
 
     private void todosConsultaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todosConsultaButtonActionPerformed
-        // TODO add your handling code here:
+        ConsultaController.SetTableModel();
     }//GEN-LAST:event_todosConsultaButtonActionPerformed
 
     private void excluirConsultaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirConsultaButtonActionPerformed
-        // TODO add your handling code here:
+        ConsultaController.Delete();
     }//GEN-LAST:event_excluirConsultaButtonActionPerformed
 
     private void consultaTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultaTableMousePressed
-        // TODO add your handling code here:
+        ConsultaController.Read();
     }//GEN-LAST:event_consultaTableMousePressed
 
     private void consultaTableKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_consultaTableKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_consultaTableKeyTyped
+
+    private void dataNovoConsultaTextFieldKeyTyped(java.awt.event.KeyEvent evt){
+        ConsultaController.SetHorariosDisponiveis(dataNovoConsultaTextField.getText());
+    }
     //</editor-fold>
 
     /**
@@ -1492,6 +1451,9 @@ public class Main extends javax.swing.JFrame {
     public void InitializeFields(){
         ClienteController.SetFields(nomeClienteTextField, emailClienteTextField, telefoneClienteTextField, clienteTable);
         AnimalController.SetFields(nomeAnimalTextField, especieAnimalTextField, consultasAnimalList, animalTable);
+        TratamentoController.SetFields(tratamentoTable, descricaoTratamentoTextArea, encerradoTratamentoCheckBox, nomeTratamentoTextField, dataIniTratamentoTextField, dataEncTratamentoTextField);
+        ConsultaController.SetFields(nomeVetTextField, telefoneVetTextField, dataNovoConsultaTextField, nomeVetNovoConsultaTextField,comentariosNovoConsultaTextField, consultaTable, examesListNovaConsulta, horariosListNovaConsulta);
+        ExameController.SetFields(nomeNovoExameTextField, consultaNovoExameTextField, descricaoNovoExameTextField, exameTable);
         ClienteController.ResetTableModel();
         AnimalController.ResetTableModel();
     }
@@ -1499,6 +1461,7 @@ public class Main extends javax.swing.JFrame {
     //<editor-fold desc="Variables Declaration">
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable animalTable;
+    private javax.swing.JButton atualizarTratamentoButton;
     private javax.swing.JTextField buscaAnimalTextField;
     private javax.swing.JTextField buscaClienteTextField;
     private javax.swing.JTextField buscarConsultaTextField;
@@ -1509,19 +1472,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField consultaNovoExameTextField;
     private javax.swing.JTable consultaTable;
     private javax.swing.JList<String> consultasAnimalList;
-    private javax.swing.JTextField dataEncNovoConsultaTextField;
-    private javax.swing.JTextField dataEncNovoTratTextField;
     private javax.swing.JTextField dataEncTratamentoTextField;
-    private javax.swing.JTextField dataIniNovoConsultaTextField;
-    private javax.swing.JTextField dataIniNovoTratTextField;
+    private javax.swing.JTextField dataNovoConsultaTextField;
     private javax.swing.JTextField dataIniTratamentoTextField;
     private javax.swing.JTextArea descricaoNovoExameTextField;
-    private javax.swing.JTextArea descricaoNovoTratTextArea;
     private javax.swing.JTextArea descricaoTratamentoTextArea;
     private javax.swing.JTextField emailClienteTextField;
     private javax.swing.JCheckBox encerradoTratamentoCheckBox;
     private javax.swing.JTextField especieAnimalTextField;
     private javax.swing.JTable exameTable;
+    private javax.swing.JList<String> examesListNovaConsulta;
     private javax.swing.JButton excluirAnimalButton;
     private javax.swing.JButton excluirClienteButton;
     private javax.swing.JButton excluirConsultaButton;
@@ -1532,9 +1492,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> filtroConsultaComboBox;
     private javax.swing.JComboBox<String> filtroExameComboBox;
     private javax.swing.JComboBox<String> filtroTratamentoComboBox;
+    private javax.swing.JList<String> horariosListNovaConsulta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -1544,11 +1506,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
@@ -1556,12 +1514,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1571,21 +1529,22 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField nomeAnimalTextField;
     private javax.swing.JTextField nomeClienteTextField;
     private javax.swing.JTextField nomeNovoExameTextField;
-    private javax.swing.JTextField nomeNovoTratTextField;
     private javax.swing.JTextField nomeTratamentoTextField;
+    private javax.swing.JTextField nomeVetNovoConsultaTextField;
     private javax.swing.JTextField nomeVetTextField;
     private javax.swing.JButton novoAnimalButton;
     private javax.swing.JButton novoClienteButton;

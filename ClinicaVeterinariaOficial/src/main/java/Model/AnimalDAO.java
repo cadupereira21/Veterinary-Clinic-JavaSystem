@@ -64,7 +64,7 @@ public class AnimalDAO extends DAO {
     }
 
     // Generic Retriever
-    public List retrieve(String query) {
+    public List<Animal> retrieve(String query) {
         List<Animal> animais = new ArrayList();
         ResultSet rs = getResultSet(query);
         try {
@@ -78,12 +78,12 @@ public class AnimalDAO extends DAO {
     }
 
     // RetrieveAll
-    public List retrieveAll() {
+    public List<Animal> retrieveAll() {
         return this.retrieve("SELECT * FROM animal");
     }
 
     // RetrieveLast
-    public List retrieveLast(){
+    public List<Animal> retrieveLast(){
         return this.retrieve("SELECT * FROM animal WHERE id = " + lastId("animal","id"));
     }
 
@@ -99,8 +99,12 @@ public class AnimalDAO extends DAO {
     }
 
     // RetrieveBySimilarName
-    public List retrieveBySimilarName(String nome) {
+    public List<Animal> retrieveBySimilarName(String nome) {
         return this.retrieve("SELECT * FROM animal WHERE nome LIKE '%" + nome + "%'");
+    }
+
+    public List<Animal> retrieveBySimilarName(String nomeAnimal, int idCliente) {
+        return this.retrieve("SELECT * FROM animal WHERE nome LIKE '%" + nomeAnimal + "%' AND id_cliente = " + idCliente);
     }
 
     // Updade

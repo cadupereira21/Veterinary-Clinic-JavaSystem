@@ -66,6 +66,8 @@ public class ClienteController {
 
         AnimalController.ResetTextFields();
         AnimalController.SetTableModel();
+        TratamentoController.ResetTextFields();
+        ConsultaController.ResetTableModel();
     }
 
     public static void Update() {

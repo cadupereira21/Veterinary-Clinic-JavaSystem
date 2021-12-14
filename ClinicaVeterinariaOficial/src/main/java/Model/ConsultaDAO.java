@@ -111,8 +111,8 @@ public class ConsultaDAO extends DAO {
         return this.retrieve("SELECT * FROM consulta WHERE id_tratamento = " + id);
     }
 
-    public List<Consulta> retrieveByDia(String dia) {
-        return this.retrieve("SELECT * FROM consulta WHERE data = " + dia);
+    public List<Consulta> retrieveByData(String data) {
+        return this.retrieve("SELECT * FROM consulta WHERE data LIKE '%" + data + "%'");
     }
 
     // Update

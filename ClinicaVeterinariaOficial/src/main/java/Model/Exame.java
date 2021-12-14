@@ -24,10 +24,6 @@ public class Exame {
 
     @Override
     public String toString() {
-        return "Exame{" +
-                "id=" + id +
-                ", descricao='" + nome + '\'' +
-                ", idConsulta=" + idConsulta +
-                '}';
+        return "[ " + id + " ] - " + nome;
     }
 }

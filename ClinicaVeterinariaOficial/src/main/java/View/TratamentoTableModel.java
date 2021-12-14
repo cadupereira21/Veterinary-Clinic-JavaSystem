@@ -37,9 +37,9 @@ public class TratamentoTableModel extends GenericTableModel{
             case 1:
                 return trat.getNome();
             case 2:
-                return trat.getDtInicio();
+                return Parser.DataToString(trat.getDtInicio());
             case 3:
-                return trat.getDtFim();
+                return Parser.DataToString(trat.getDtFim());
             default:
                 throw new IndexOutOfBoundsException("columnIndex out of bounds");
         }

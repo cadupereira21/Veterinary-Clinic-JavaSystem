@@ -12,7 +12,7 @@ public class Tratamento {
     private int idAnimal;
     private boolean terminou;
 
-    public Tratamento(int id, String nome, String descricao,String dtInicio, String dtFim, int idAnimal, int terminou) {
+    public Tratamento(int id, String nome, String descricao, String dtInicio, String dtFim, int idAnimal, int terminou) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;

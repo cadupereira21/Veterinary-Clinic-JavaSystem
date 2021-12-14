@@ -11,19 +11,15 @@ import java.util.List;
 
 public class ConsultasRecentesListModel implements ListModel {
 
-    private List<String> consultas = new ArrayList<>();
+    private List<Consulta> consultas = new ArrayList<>();
 
-    public ConsultasRecentesListModel(List<Consulta> consultas) {
+    public ConsultasRecentesListModel(List<Consulta> consultasString) {
 
-        if(!consultas.isEmpty()) {
+        if(!consultasString.isEmpty()) {
             try {
-                for (Consulta c : consultas) {
+                for (Consulta c : consultasString) {
                     var minutes  = c.getData().get(Calendar.MINUTE) == 0 ? "" : c.getData().get(Calendar.MINUTE);
-                    var aux = "[ " + c.getData().get(Calendar.DAY_OF_MONTH) + "/" + c.getData().get(Calendar.MONTH) + "/" + c.getData().get(Calendar.YEAR) + " - "
-                            + c.getData().get(Calendar.HOUR_OF_DAY) + "h" + minutes + " ] " + TratamentoDAO.getInstance().retrieveById(c.getIdTratamento()).getNome()
-                            + " (" + c.getComentarios() + ")";
-
-                    this.consultas.add(aux);
+                    consultas.add(c);
                 }
             } catch (NullPointerException npe) {
                 System.out.println(npe.getMessage());
